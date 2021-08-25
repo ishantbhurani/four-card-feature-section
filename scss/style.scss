@@ -1,0 +1,121 @@
+@import "variables";
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  padding: 3em 2em;
+  background-color: $very-light-gray;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  @include for-desktop-and-below {
+    width: 100%;
+  }
+}
+
+.title,
+.subtitle {
+  font-weight: 200;
+  font-size: 2.2rem;
+  color: $very-dark-blue;
+
+  @include for-mobile-and-below {
+    font-size: 1.5rem;
+  }
+}
+
+.subtitle {
+  font-weight: 600;
+}
+
+.subhead {
+  color: $grayish-blue;
+  font-weight: 400;
+  width: 50%;
+  margin: 1em auto;
+  font-size: 0.9rem;
+
+  @include for-tablet-and-below {
+    width: 80%;
+  }
+
+  @include for-mobile-and-below {
+    width: 100%;
+  }
+}
+
+.features {
+  max-width: 950px;
+  margin: 0 auto;
+  margin-top: 2.5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: $gap;
+
+  @include for-tablet-and-below {
+    grid-template-columns: 1fr;
+  }
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.card {
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 1em 1.5em -0.875em #ccc;
+  border-radius: 0.5em;
+  text-align: start;
+  padding: 1.5em;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: $very-dark-blue;
+}
+
+.card-desc {
+  margin-top: 0.5em;
+  font-size: 0.8rem;
+  color: $grayish-blue;
+  line-height: $wide-line-height;
+}
+
+.card-icon {
+  margin-top: 2.5em;
+  text-align: right;
+}
+
+.supervisor-card {
+  @include box-shadow($cyan);
+}
+
+.team-builder-card {
+  @include box-shadow($red);
+}
+
+.karma-card {
+  @include box-shadow($orange);
+}
+
+.calculator-card {
+  @include box-shadow($blue);
+}
